@@ -5,15 +5,21 @@
     <title>example</title>
     <link rel="stylesheet" type="text/css" href="UI/styles.css">
     <link rel="stylesheet" type="text/css" href="UI/font-awesome-4.7.0/css/font-awesome.css">
-    <link rel="stylesheet" type="text/css" href="UI/temp.css">
 </head>
 
 <body>
 <div class="navbar">
     <a class="portal_home" href="#top"><i class="fa fa-home fa-lg"></i></a>
-    <a class="profile_menu">
-        <i>profile</i><i class="fa fa-user fa-fw fa-lg"></i>
-    </a>
+    <nav class="dws-menu">
+            <ul>
+                <li>
+                    <a><i>profile</i><i class="fa fa-user fa-fw fa-lg"></i></a>
+                    <ul>
+                        
+                    </ul>
+                </li>
+            </ul>
+    </nav>
     <form id="search-form" class="search"  autocomplete="off" method="post" action="search" >
         <input placeholder="Search.." type="text" title="type &quot;a&quot;" name="search" >
         <button class="search_submit" type="submit"><i class="fa fa-search"></i></button>
@@ -23,7 +29,7 @@
         Content of the document...
     </div>
 
-    <footer>
+    <footer style="position: absolute; bottom: 0%;">
         <p>company name</p>
         <p>Author</p>
     </footer>

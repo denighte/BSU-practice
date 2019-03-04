@@ -2,43 +2,7 @@
     box-sizing: border-box;
 }
 
-form.search input[type=text] {
-    padding: 10px;
-    font-size: 17px;
-    border: 1px solid grey;
-    float: left;
-    width: 80%;
-    background: #f1f1f1;
-}
 
-form.search button {
-    float: left;
-    width: 20%;
-    padding: 10px;
-    background: #2196F3;
-    color: white;
-    font-size: 17px;
-    border: 1px solid grey;
-    border-left: none;
-    cursor: pointer;
-}
-
-form.search button:hover {
-    background: #0b7dda;
-}
-
-form.search::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-form.search {
-    position: fixed;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
 
 h4.search_error {
     color:red;
@@ -54,6 +18,10 @@ h4.search_error {
 header{
     margin-top: 10px;
     font-family: Cuprum, Arial, Helvetica, sans-serif;
+}
+
+.dws-menu {
+    float:right;
 }
 .dws-menu *{
     margin: 0;
