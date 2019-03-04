@@ -5,34 +5,46 @@
     <title>example</title>
     <link rel="stylesheet" type="text/css" href="UI/styles.css">
     <link rel="stylesheet" type="text/css" href="UI/font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="UI/temp/sheet.css">
 </head>
-
 <body>
-<div class="navbar">
-    <a id="portal_home" href="#top"><i class="fa fa-home fa-lg"></i></a>
-    <form id="search-form" class="search"  autocomplete="off" method="post" action="search" >
-        <input placeholder="Search.." type="text" title="type &quot;a&quot;" name="search" >
-        <button class="search_submit" type="submit"><i class="fa fa-search"></i></button>
-    </form>
-</div>
-<nav class="dws-menu">
-    <ul>
-        <li>
-            <a><i>profile</i><i class="fa fa-user fa-fw fa-lg"></i></a>
-            <ul>
-                <li><a>Add post</a></li>
-                <li><a>Settings</a></li>
-            </ul>
-        </li>
-    </ul>
-</nav>
-<div class="post_holder">
-    Content of the document...
-</div>
-<footer>
-    <p>&lt;insert_name&gt;</p>
-    <p>&lt;insert_author&gt;</p>
-</footer>
-</body>
+    <div class="navbar">
+        <a id="portal_home" href="#top"><i class="fa fa-home fa-lg"></i></a>
+        <form id="search-form" class="search"  autocomplete="off" method="post" action="search" >
+            <span class="search-span">
+                <input placeholder="Search.." type="text" title="type &quot;a&quot;" name="search" >
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </span>
+        </form>
+    </div>
+    <nav class="dws-menu">
+        <ul>
+            <li>
+                <a><i>profile</i><i class="fa fa-user fa-fw fa-lg"></i></a>
+                <ul>
+                    <li><a>Add post</a></li>
+                    <li><a>Settings</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div class="post-list-holder">
+        <div class="post-holder">
+            <div class="post-image-wrapper">
+                <div class="post-image-holder">
+                </div>
+                <span class="like-holder">
+                </span>
+            </div>
+            <p align="center">Content of the post...</p>
+            <p align="center">Content of the post...</p>
+            <p align="center">Content of the post...</p>
+        </div>
 
+    </div>
+    <footer>
+        <div><p>&lt;insert_portal_name&gt;</p></div>
+        <div><p>&lt;insert_author&gt;</p></div>
+    </footer>
+</body>
 </html>

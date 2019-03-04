@@ -15,9 +15,12 @@ footer {
     right: 0;
     bottom: 0;
     left: 0;
-    padding: 1rem;
-    background-color: #efefef;
+    background: linear-gradient(to bottom,  rgba(224,225,229,1) 0%,rgba(69,69,71,1) 2%,rgba(69,69,71,1) 98%,rgba(224,225,229,1) 100%);;
     text-align: center;
+}
+
+footer p {
+    color: 	#FFFFFF;
 }
 
 .navbar {
@@ -54,13 +57,15 @@ form.search {
 
 form.search input[type=text], button {
     font-size: 1em;
-    -moz-box-sizing: border-box; /* or `content-box` */
+    -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
 form.search input[type=text] {
     border: 1px solid grey;
+    border-radius: 1em 0 0 1em;
+    text-indent: 0.4em;
     float: left;
     width: 10%;
     background: #f1f1f1;
@@ -71,16 +76,13 @@ form.search button {
     background: #2196F3;
     color: white;
     border: 1px solid grey;
+    border-radius: 0 1em 1em 0;
     border-left: none;
     cursor: pointer;
 }
 
 form.search button:hover {
     background: #0b7dda;
-}
-
-.post_holder {
-
 }
 
 .dws-menu {
@@ -135,7 +137,6 @@ form.search button:hover {
     transition: all 0.3s ease;
 }
 
-/*sub menu*/
 .dws-menu li ul{
     position: absolute;
     min-width: 150px;
@@ -156,4 +157,15 @@ form.search button:hover {
 }
 .dws-menu li:hover > ul{
     display: block;
+}
+
+/*posts styles*/
+div.post-list-holder {
+    margin-top: 3.5em;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+div.post-holder {
+    background-color: #FFFFFF;
 }
