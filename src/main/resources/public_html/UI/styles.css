@@ -1,9 +1,31 @@
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #EDEEF0;
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
+}
+footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #efefef;
+    text-align: center;
+}
+
 .navbar {
     overflow: hidden;
-    background: linear-gradient(to bottom,  rgba(224,225,229,1) 0%,rgba(69,69,71,1) 2%,rgba(69,69,71,1) 98%,rgba(224,225,229,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0e1e5', endColorstr='#e0e1e5',GradientType=0 ); /* IE6-9 */
+    background: linear-gradient(to bottom,  rgba(224,225,229,1) 0%,rgba(69,69,71,1) 2%,rgba(69,69,71,1) 98%,rgba(224,225,229,1) 100%);
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
 }
 
@@ -15,13 +37,8 @@
     text-decoration: none;
 }
 
-.navbar a.portal_home {
+.navbar #portal_home {
     float: left;
-}
-
-.navbar a.profile_menu {
-    float: right;
-    margin-right: 5%;
 }
 
 .navbar a:hover {
@@ -67,7 +84,9 @@ form.search button:hover {
 }
 
 .dws-menu {
-    float:right;
+    position: fixed;
+    top: 0;
+    right: 0;
 }
 .dws-menu *{
     margin: 0;
@@ -100,7 +119,6 @@ form.search button:hover {
 .dws-menu > ul li a{
     display: block;
     background: linear-gradient(to bottom,  rgba(201,201,201,1) 0%,rgba(246,246,246,1) 2%,rgba(196,197,199,1) 98%,rgba(117,117,119,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c9c9c9', endColorstr='#757577',GradientType=0 ); /* IE6-9 */
 
     padding: 15px 30px 15px 40px;
     font-size: 14px;
@@ -111,7 +129,6 @@ form.search button:hover {
 }
 .dws-menu li a:hover{
     background: linear-gradient(to bottom,  rgba(224,225,229,1) 0%,rgba(69,69,71,1) 2%,rgba(69,69,71,1) 98%,rgba(224,225,229,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0e1e5', endColorstr='#e0e1e5',GradientType=0 ); /* IE6-9 */
 
     color: #ffffff;
     box-shadow: 1px 5px 10px -5px black;
@@ -139,9 +156,4 @@ form.search button:hover {
 }
 .dws-menu li:hover > ul{
     display: block;
-}
-
-
-.main {
-    margin-top: 30px; /* Add a top margin to avoid content overlay */
 }
