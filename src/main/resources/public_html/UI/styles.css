@@ -30,6 +30,7 @@ footer p {
     top: 0;
     left: 0;
     width: 100%;
+    height: 3em;
 }
 
 .navbar a {
@@ -40,34 +41,67 @@ footer p {
     text-decoration: none;
 }
 
-.navbar #portal_home {
+.navbar #search-settings-icon {
+    padding: 15px 15px 15px 15px;
+}
+
+.navbar #profile-menu {
+    padding: 15px 30px 15px 40px;
+}
+
+.navbar #portal-home {
     float: left;
+    height: 3em;
+}
+
+.navbar #search-settings {
+    position: fixed;
+    display: inline-block;
+    top: 0;
+    height: 3em;
+}
+
+.navbar #user-settings {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 3em;
+}
+
+.icon-wrapper {
+    height: 3em;
+    text-align: center;
 }
 
 .navbar a:hover {
     color: #2196F3;
 }
 
-form.search {
+
+.search-wrapper {
+    position: fixed;
     margin-top: 0.8em;
     margin-left: 20%;
+    top: 0;
+    height: 3em;
+    width: 12%;
+}
+
+form.search {
     background: white;
-    box-sizing: border-box;
+    display: inline;
 }
 
 form.search input[type=text], button {
     font-size: 1em;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
 }
 
 form.search input[type=text] {
     border: 1px solid grey;
+    box-sizing: border-box;
     border-radius: 1em 0 0 1em;
     text-indent: 0.4em;
     float: left;
-    width: 10%;
     background: #f1f1f1;
 }
 
@@ -85,11 +119,6 @@ form.search button:hover {
     background: #0b7dda;
 }
 
-.dws-menu {
-    position: fixed;
-    top: 0;
-    right: 0;
-}
 .dws-menu *{
     margin: 0;
     padding: 0;
@@ -122,7 +151,6 @@ form.search button:hover {
     display: block;
     background: linear-gradient(to bottom,  rgba(201,201,201,1) 0%,rgba(246,246,246,1) 2%,rgba(196,197,199,1) 98%,rgba(117,117,119,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 
-    padding: 15px 30px 15px 40px;
     font-size: 14px;
     color: #454547;
     text-decoration: none;

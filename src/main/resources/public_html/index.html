@@ -9,25 +9,43 @@
 </head>
 <body>
     <div class="navbar">
-        <a id="portal_home" href="#top"><i class="fa fa-home fa-lg"></i></a>
-        <form id="search-form" class="search"  autocomplete="off" method="post" action="search" >
-            <span class="search-span">
+        <div class="left-nav-bar">
+            <div class="icon-wrapper">
+                <a id="portal-home" href="#top"><i class="fa fa-home fa-lg"></i></a>
+            </div>
+            <nav id="search-settings" class="dws-menu">
+                <ul>
+                    <li>
+                        <div class="icon-wrapper">
+                            <a id="search-settings-icon" ><i class="fa fa-cog fa-fw fa-lg"></i></a>
+                        </div>
+                        <ul>
+                            <li><a>Hashtag search</a></li>
+                            <li><a>Author search</a></li>
+                            <li><a>Date search</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="search-wrapper">
+            <form id="search-form" class="search"  autocomplete="off" method="post" action="search" >
                 <input placeholder="Search.." type="text" title="type &quot;a&quot;" name="search" >
                 <button type="submit"><i class="fa fa-search"></i></button>
-            </span>
-        </form>
+            </form>
+        </div>
+        <nav id="user-settings" class="dws-menu">
+            <ul>
+                <li>
+                    <a id="profile-menu"><i>profile</i><i class="fa fa-user fa-fw fa-lg"></i></a>
+                    <ul>
+                        <li><a>Add post</a></li>
+                        <li><a>Settings</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
     </div>
-    <nav class="dws-menu">
-        <ul>
-            <li>
-                <a><i>profile</i><i class="fa fa-user fa-fw fa-lg"></i></a>
-                <ul>
-                    <li><a>Add post</a></li>
-                    <li><a>Settings</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
     <div class="post-list-holder">
         <div class="post-holder">
             <div class="post-image-wrapper">
