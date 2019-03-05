@@ -20,9 +20,27 @@
                             <a id="search-settings-icon" ><i class="fa fa-cog fa-fw fa-lg"></i></a>
                         </div>
                         <ul>
-                            <li><a>Hashtag search</a></li>
-                            <li><a>Author search</a></li>
-                            <li><a>Date search</a></li>
+                            <li>
+                                <a>Search by: </a>
+                                <ul>
+                                    <li><a>hashtags</a></li>
+                                    <li><a>author</a></li>
+                                    <li>
+                                        <a>date:</a>
+                                        <ul>
+                                            <li><a>after</a></li>
+                                            <li><a>before</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a>Sort by:</a>
+                                <ul>
+                                    <li><a>likes</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
                 </ul>
@@ -37,7 +55,7 @@
         <nav id="user-settings" class="dws-menu">
             <ul>
                 <li>
-                    <a id="profile-menu"><i>profile</i><i class="fa fa-user fa-fw fa-lg"></i></a>
+                    <a id="profile-menu"><i>&lt;insert_user&gt;</i><i class="fa fa-user fa-fw fa-lg"></i></a>
                     <ul>
                         <li><a>Add post</a></li>
                         <li><a>Settings</a></li>
@@ -50,15 +68,34 @@
         <div class="post-holder">
             <div class="post-image-wrapper">
                 <div class="post-image-holder">
+                    image
                 </div>
-                <span class="like-holder">
-                </span>
+                <div class="like-holder">
+                    <button class="like-sm"><i class="fa fa-heart fa-lg"></i></button><span name="img-like-number" class="like-sm-number">99</span>
+                </div>
             </div>
-            <p align="center">Content of the post...</p>
-            <p align="center">Content of the post...</p>
-            <p align="center">Content of the post...</p>
+            <div name="post-text" class="post-text-hoder">
+                <p align="center">Content of the post...</p>
+                <p align="center">Content of the post...</p>
+                <p align="center">Content of the post...</p>
+            </div>
         </div>
 
+        <div class="post-holder">
+            <div name="img-wrapper" class="post-image-wrapper">
+                <div name="img-hoder" class="post-image-holder">
+                    image
+                </div>
+                <div class="like-holder">
+                    <button name="img-like" class="like-sm" style="opacity: 1"><i class="fa fa-heart fa-lg"></i></button><span name="img-like-number" class="like-sm-number">103</span>
+                </div>
+            </div>
+            <div name="post-text" class="post-text-hoder">
+                <p align="center">Content of the post...</p>
+                <p align="center">Content of the post...</p>
+                <p align="center">Content of the post...</p>
+            </div>
+        </div>
     </div>
     <footer>
         <div><p>&lt;insert_portal_name&gt;</p></div>

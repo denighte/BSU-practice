@@ -35,10 +35,19 @@ footer p {
 
 .navbar a {
     display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
+    background: linear-gradient(to bottom,  rgba(201,201,201,1) 0%,rgba(246,246,246,1) 2%,rgba(196,197,199,1) 98%,rgba(117,117,119,1) 100%);
+    font-size: 1em;
+    color: #454547;
     text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 14px 16px;
+}
+
+.navbar a:hover {
+    background: linear-gradient(to bottom,  rgba(224,225,229,1) 0%,rgba(69,69,71,1) 2%,rgba(69,69,71,1) 98%,rgba(224,225,229,1) 100%);
+    color: #ffffff;
+    box-shadow: 1px 5px 10px -5px black;
+    transition: all 0.3s ease;
 }
 
 .navbar #search-settings-icon {
@@ -70,21 +79,22 @@ footer p {
 
 .icon-wrapper {
     height: 3em;
+    border: none;
     text-align: center;
 }
 
-.navbar a:hover {
-    color: #2196F3;
+div.left-nav-bar {
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 
 .search-wrapper {
     position: fixed;
     margin-top: 0.8em;
-    margin-left: 20%;
+    margin-left: 30%;
     top: 0;
     height: 3em;
-    width: 12%;
 }
 
 form.search {
@@ -115,6 +125,10 @@ form.search button {
     cursor: pointer;
 }
 
+form.search input:focus, button:focus {
+    outline:0;
+}
+
 form.search button:hover {
     background: #0b7dda;
 }
@@ -143,23 +157,20 @@ form.search button:hover {
 }
 .dws-menu > ul li > a i.fa{
     position: absolute;
-    top: 15px;
-    left: 12px;
-    font-size: 18px;
+    top: 1em;
+    left: 0.5em;
+    font-size: 1.2em;
 }
 .dws-menu > ul li a{
     display: block;
-    background: linear-gradient(to bottom,  rgba(201,201,201,1) 0%,rgba(246,246,246,1) 2%,rgba(196,197,199,1) 98%,rgba(117,117,119,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-
-    font-size: 14px;
+    background: linear-gradient(to bottom,  rgba(201,201,201,1) 0%,rgba(246,246,246,1) 2%,rgba(196,197,199,1) 98%,rgba(117,117,119,1) 100%);
+    font-size: 1em;
     color: #454547;
     text-decoration: none;
-    text-transform:uppercase;
     transition: all 0.3s ease;
 }
 .dws-menu li a:hover{
-    background: linear-gradient(to bottom,  rgba(224,225,229,1) 0%,rgba(69,69,71,1) 2%,rgba(69,69,71,1) 98%,rgba(224,225,229,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-
+    background: linear-gradient(to bottom,  rgba(224,225,229,1) 0%,rgba(69,69,71,1) 2%,rgba(69,69,71,1) 98%,rgba(224,225,229,1) 100%);
     color: #ffffff;
     box-shadow: 1px 5px 10px -5px black;
     transition: all 0.3s ease;
@@ -167,7 +178,7 @@ form.search button:hover {
 
 .dws-menu li ul{
     position: absolute;
-    min-width: 150px;
+    min-width: 9em;
     display: none;
 }
 .dws-menu li > ul li{
@@ -180,7 +191,7 @@ form.search button:hover {
 }
 .dws-menu li > ul li ul{
     position: absolute;
-    right: -150px;
+    right: -9em;
     top: 0;
 }
 .dws-menu li:hover > ul{
@@ -190,10 +201,50 @@ form.search button:hover {
 /*posts styles*/
 div.post-list-holder {
     margin-top: 3.5em;
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 30%;
+    margin-right: 30%;
 }
 
 div.post-holder {
     background-color: #FFFFFF;
+    margin-bottom: 0.4em;
+}
+
+div.post-image-holder {
+    text-align: center;
+}
+
+div.like-holder {
+    font-size: 1em;
+    margin: 0.4em 2em;
+    padding-bottom: 0.4em;
+    padding-top: 0.4em;
+    border-top: 1px solid #d3d3d3;
+}
+
+div.like-holder i {
+    padding-left: 0.4em;
+}
+
+div.post-text-hoder {
+    font-size: 1em;
+    border-top: 1px solid #d3d3d3;
+    margin-top: 0.4em;
+}
+
+button.like-sm {
+    padding: 0;
+    border: none;
+    background: none;
+    color: #ff1493;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+button.like-sm:focus {
+    outline:0;
+}
+
+span.like-sm-number {
+    margin-left: 0.5em;
 }
