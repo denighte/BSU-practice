@@ -20,9 +20,6 @@
         }
 
         getPhotoPosts(filterConfig, top = 10, skip = 0) {
-            if (skip >= this.postsArray.length) {
-                return [];
-            }
             let result = [];
             let len = top + skip > this.postsArray.length ? this.postsArray.length : top + skip;
             let keys = filterConfig == null ? [] : Object.keys(filterConfig);
@@ -79,6 +76,7 @@
         }
     }
 
+//TODO: remove the following in production
 
 //reading json objects from file
 //read from file does not work?
