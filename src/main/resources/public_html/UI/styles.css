@@ -50,37 +50,25 @@ footer p {
     transition: all 0.3s ease;
 }
 
-.navbar #search-settings-icon {
-    padding: 15px 15px 15px 15px;
-}
 
 .navbar #profile-menu {
-    padding: 15px 30px 15px 40px;
+    padding: 14px 30px 14px 40px;
 }
 
 .navbar #portal-home {
     float: left;
-    height: 3em;
 }
 
 .navbar #search-settings {
     position: fixed;
     display: inline-block;
     top: 0;
-    height: 3em;
 }
 
 .navbar #user-settings {
     position: fixed;
     top: 0;
     right: 0;
-    height: 3em;
-}
-
-.icon-wrapper {
-    height: 3em;
-    border: none;
-    text-align: center;
 }
 
 div.left-nav-bar {
@@ -94,7 +82,6 @@ div.left-nav-bar {
     margin-top: 0.8em;
     margin-left: 30%;
     top: 0;
-    height: 3em;
 }
 
 form.search {
@@ -147,13 +134,6 @@ form.search button:hover {
 }
 .dws-menu > ul li{
     position: relative;
-    border-right: 1px solid #c7c8ca;
-}
-.dws-menu > ul li:first-child{
-    border-left: 1px solid #b2b3b5;
-}
-.dws-menu > ul li:last-child{
-    border-right: 1px solid #babbbd;
 }
 .dws-menu > ul li > a i.fa{
     position: absolute;
@@ -182,7 +162,9 @@ form.search button:hover {
     display: none;
 }
 .dws-menu li > ul li{
-    border: 1px solid #c7c8ca;
+    border-left: 1px solid #c7c8ca;
+    border-right: 1px solid #c7c8ca;
+    border-bottom: 1px solid #c7c8ca;
 }
 .dws-menu li > ul li a{
     padding: 10px;
@@ -206,7 +188,6 @@ div.post-list-holder {
 }
 
 div.post-holder {
-    position: relative;
     background-color: #FFFFFF;
     margin-bottom: 0.4em;
 }
@@ -237,21 +218,18 @@ div.post-text-holder {
     font-size: 1em;
     border-top: 1px solid #d3d3d3;
     padding-top: 0.4em;
-    padding-bottom: 1.6em;
+    padding-bottom: 0.4em;
 }
 
 div.post-author {
     font-size: 1em;
-    position: absolute;
-    left: 0.4em;
-    bottom: 0.4em;
+    margin-left: 2em;
 }
 
 div.post-date {
     font-size: 1em;
-    position: absolute;
-    right: 0.4em;
-    bottom: 0.4em;
+    margin-left: 2em;
+    padding-bottom: 0.4em;
 }
 
 button.like, .ulike {
