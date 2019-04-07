@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="UI/font-awesome-4.7.0/css/font-awesome.css">
+    <style>
+        .post-add {
+            margin-left: 20%;
+            margin-right: 20%;
+            display: inline-flex;
+            width: 80%;
+            text-align: center;
+        }
+
+        .post-add input[type=file] {
+            position: absolute;
+            display: block;
+            overflow: hidden;
+            width: 0;
+            height: 0;
+            border: 0;
+            padding: 0;
+        }
+        .post-add input[type=text] {
+            width: 60%;
+        }
+
+        .post-add button {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .post-add i {
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="post-add">
+        <input type="file"/>
+        <button>
+            <i class="fa fa-paperclip"></i>
+        </button>
+        <input type="text" placeholder="What's new ?.."/>
+        <button type="submit">
+            <i class="fa fa-arrow-circle-right fa-lg"></i>
+        </button>
+    </div>
+</body>
+</html>

@@ -135,12 +135,7 @@ form.search button:hover {
 .dws-menu > ul li{
     position: relative;
 }
-.dws-menu > ul li > a i.fa{
-    position: absolute;
-    top: 1em;
-    left: 0.5em;
-    font-size: 1.2em;
-}
+
 .dws-menu > ul li a{
     display: block;
     background: linear-gradient(to bottom,  rgba(201,201,201,1) 0%,rgba(246,246,246,1) 2%,rgba(196,197,199,1) 98%,rgba(117,117,119,1) 100%);
@@ -221,6 +216,10 @@ div.post-text-holder {
     padding-bottom: 0.4em;
 }
 
+div.post-text-holder p {
+    margin: 0.4em 2em;
+}
+
 div.post-author {
     font-size: 1em;
     margin-left: 2em;
@@ -272,4 +271,41 @@ button.load-more:focus {
 
 button.load-more:hover {
     background: #0b7dda;
+}
+
+.post-add {
+    width: 100%;
+    display: inline-flex;
+    text-align: center;
+    margin-bottom: 0.4em;
+}
+
+.post-add input[type=file] {
+    position: absolute;
+    display: block;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    border: 0;
+    padding: 0;
+}
+.post-add input[type=text] {
+    width: 100%;
+}
+
+.post-add button {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.post-add i {
+    height: 100%;
+}
+
+.delete {
+    float: right;
+}
+
+.delete:hover {
+    cursor: pointer;
 }

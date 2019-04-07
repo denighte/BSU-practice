@@ -20,22 +20,15 @@
                         <li>
                             <a>Search by: </a>
                             <ul>
-                                <li><a>hashtags</a></li>
-                                <li><a>author</a></li>
+                                <li><a id="search-hashtags" onclick="selectOption(this)">hashtag</a></li>
+                                <li><a id="search-author" onclick="selectOption(this)">author</a></li>
                                 <li>
                                     <a>date:</a>
                                     <ul>
-                                        <li><a>after</a></li>
-                                        <li><a>before</a></li>
+                                        <li><a id="search-date-after" onclick="selectOption(this)">after</a></li>
+                                        <li><a id="search-date-before" onclick="selectOption(this)">before</a></li>
                                     </ul>
                                 </li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a>Sort by:</a>
-                            <ul>
-                                <li><a>likes</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -45,59 +38,35 @@
     </div>
     <div class="search-wrapper">
         <form id="search-form" class="search"  autocomplete="off" method="post" action="search" >
-            <input placeholder="Search.." type="text" title="type &quot;a&quot;" name="search" >
-            <button type="submit"><i class="fa fa-search"></i></button>
+            <input id="search-query" placeholder="Search.." type="text" title="type &quot;a&quot;" name="search" >
+            <button id="search-submit" type="submit"><i class="fa fa-search"></i></button>
         </form>
     </div>
     <nav id="user-settings" class="dws-menu">
         <ul>
             <li>
-                <a id="profile-menu"><i id="user-name">&lt;insert_user&gt;</i><i class="fa fa-user fa-fw fa-lg"></i></a>
+                <a id="profile-menu"><i id="user-name">author_0</i><i class="fa fa-user fa-fw fa-lg"></i></a>
             </li>
         </ul>
     </nav>
 </div>
-<div class="post-list-holder">
-    <div class="post-holder">
-        <div class="post-image-holder">
-            <img src="placeholder-image.jpg">
-        </div>
-        <div class="like-holder">
-            <button class="ulike">
-                <i class="fa fa-heart fa-lg"></i>
-            </button>
-            <span class="like-number">99</span>
-        </div>
-        <div class="post-text-holder">
-            <p align="center">Content of the post...</p>
-            <p align="center">Content of the post...</p>
-            <p align="center">Content of the post...</p>
-        </div>
-        <div class="post-author"><i>author</i></div>
-        <div class="post-date"><i>20.03.2001</i></div>
+<div id="posts-holder" class="post-list-holder">
+    <div id="add-post-container" class="post-add">
+        <input id="add-post-file" type="file"/>
+        <button id="add-post-file-button">
+            <i class="fa fa-paperclip"></i>
+        </button>
+        <input id="add-post-description" type="text" placeholder="What's new ?.."/>
+        <button id="add-post-submit" type="submit">
+            <i class="fa fa-arrow-circle-right fa-lg"></i>
+        </button>
     </div>
-
-    <div class="post-holder">
-        <div name="img-holder" class="post-image-holder">
-            <img src="placeholder-image.jpg">
-        </div>
-        <div class="like-holder">
-            <button name="img-like" class="like">
-                <i class="fa fa-heart fa-lg"></i>
-            </button>
-            <span name="img-like-number" class="like-number">103</span>
-        </div>
-        <div name="post-text" class="post-text-holder">
-            <p align="center">Content of the post...</p>
-            <p align="center">Content of the post...</p>
-            <p align="center">Content of the post...</p>
-        </div>
-    </div>
-    <button class="load-more">Load more</button>
+    <button id="load-more-button" class="load-more">Load more</button>
 </div>
 <footer>
     <div><p>&lt;insert_portal_name&gt;</p></div>
     <div><p>&lt;insert_author&gt;</p></div>
 </footer>
+<script src="UI/js/script.js"></script>
 </body>
 </html>
