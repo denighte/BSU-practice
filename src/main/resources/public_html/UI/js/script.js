@@ -369,6 +369,37 @@ document.getElementById("load-more-button").addEventListener("click", function (
     display.append(posts.get(context.searchOption, context.loadSkip, 10));
 });
 
+function login(event) {
+    document.getElementById('id01').style.display='block'
+}
+
+document.getElementById("profile-menu").addEventListener("click", login);
+
+document.getElementById("login-submit").addEventListener("click", function (event) {
+    event.preventDefault();
+    let username = document.getElementById("uname").value;
+    let password = document.getElementById("psw").value;
+    if (!username || !password) {
+        return false;
+    }
+    let oldPassword = localStorage.getItem(username);
+    if(oldPassword) {
+        if(password !== oldPassword) {
+            alert("wrong password!");
+            return false;
+        }
+    } else {
+        localStorage.setItem(username, password);
+    }
+    document.getElementById("profile-menu").innerHTML = "<i id=\"user-name\">" + username + "</i><i class=\"fa fa-user fa-fw fa-lg\"></i>";
+    context.load();
+    document.getElementById("posts-holder").style.display = "block";
+    modal.style.display = "none";
+    document.getElementById("profile-menu").removeEventListener("click", login);
+    display.display(posts.get(context.searchOption, 0, 10));
+});
+
+
 function selectOption(element) {
     context.searchMenu.select(element);
 }
@@ -384,8 +415,14 @@ function likePost(element) {
     display.like("post_" + element.id.substr(5));
 }
 
+
 let context = new Context();
-context.load();
 let posts = new PostCollection(context);
 let display = new Display(context);
-display.display(posts.get(context.searchOption, 0, 10));
+let modal = document.getElementById('id01');
+
+window.onclick = function(event) {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+}

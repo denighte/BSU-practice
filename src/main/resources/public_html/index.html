@@ -45,12 +45,26 @@
     <nav id="user-settings" class="dws-menu">
         <ul>
             <li>
-                <a id="profile-menu"><i id="user-name">author_0</i><i class="fa fa-user fa-fw fa-lg"></i></a>
+                <a id="profile-menu">Log in</a>
             </li>
         </ul>
     </nav>
 </div>
-<div id="posts-holder" class="post-list-holder">
+<div id="id01" class="modal">
+    <form class="modal-content animate" action="">
+        <div class="close-container">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="close">&times;</span>
+        </div>
+        <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" id="uname" required>
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" id="psw" required>
+            <button id="login-submit" type="submit">Login</button>
+        </div>
+    </form>
+</div>
+<div id="posts-holder" class="post-list-holder" style="display: none;">
     <div id="add-post-container" class="post-add">
         <input id="add-post-file" type="file"/>
         <button id="add-post-file-button">

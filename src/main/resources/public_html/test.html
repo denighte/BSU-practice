@@ -1,51 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="UI/font-awesome-4.7.0/css/font-awesome.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        .post-add {
-            margin-left: 20%;
-            margin-right: 20%;
-            display: inline-flex;
-            width: 80%;
+
+        .modal-content * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .modal-content input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        .modal-content button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .modal-content button:hover {
+            opacity: 0.8;
+        }
+
+        .close-container {
             text-align: center;
+            margin: 24px 0 12px 0;
+            position: relative;
         }
 
-        .post-add input[type=file] {
-            position: absolute;
-            display: block;
-            overflow: hidden;
-            width: 0;
-            height: 0;
-            border: 0;
-            padding: 0;
-        }
-        .post-add input[type=text] {
-            width: 60%;
+        .container {
+            padding: 16px;
         }
 
-        .post-add button {
-            margin-left: 0;
-            margin-right: 0;
+        span.psw {
+            float: right;
+            padding-top: 16px;
         }
 
-        .post-add i {
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
             height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto 15% auto;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            position: absolute;
+            right: 25px;
+            top: 0;
+            color: #000;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: red;
+            cursor: pointer;
+        }
+
+        .animate {
+            -webkit-animation: animatezoom 0.6s;
+            animation: animatezoom 0.6s
+        }
+
+        @-webkit-keyframes animatezoom {
+            from {-webkit-transform: scale(0)}
+            to {-webkit-transform: scale(1)}
+        }
+
+        @keyframes animatezoom {
+            from {transform: scale(0)}
+            to {transform: scale(1)}
         }
     </style>
 </head>
 <body>
-    <div class="post-add">
-        <input type="file"/>
-        <button>
-            <i class="fa fa-paperclip"></i>
-        </button>
-        <input type="text" placeholder="What's new ?.."/>
-        <button type="submit">
-            <i class="fa fa-arrow-circle-right fa-lg"></i>
-        </button>
-    </div>
+
+
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+
+<div id="id01" class="modal">
+    <form class="modal-content animate" action="">
+        <div class="close-container">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="close">&times;</span>
+        </div>
+
+        <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" id="uname" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" id="psw" required>
+
+            <button type="submit">Login</button>
+        </div>
+    </form>
+</div>
+
+<script>
+
+</script>
+
 </body>
 </html>
