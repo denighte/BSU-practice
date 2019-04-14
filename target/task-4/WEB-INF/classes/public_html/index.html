@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>example</title>
+    <link rel="stylesheet" type="text/css" href="UI/styles.css">
+    <link rel="stylesheet" type="text/css" href="UI/font-awesome-4.7.0/css/font-awesome.css">
+</head>
+<body>
+<div class="navbar">
+    <div class="left-nav-bar">
+        <a id="portal-home" href="#top"><i class="fa fa-home fa-lg"></i></a>
+        <nav id="search-settings" class="dws-menu">
+            <ul>
+                <li>
+                    <div>
+                        <a id="search-settings-icon" ><i class="fa fa-cog fa-fw fa-lg"></i></a>
+                    </div>
+                    <ul>
+                        <li>
+                            <a>Search by: </a>
+                            <ul>
+                                <li><a id="search-hashtags" onclick="selectOption(this)">hashtag</a></li>
+                                <li><a id="search-author" onclick="selectOption(this)">author</a></li>
+                                <li>
+                                    <a>date:</a>
+                                    <ul>
+                                        <li><a id="search-date-after" onclick="selectOption(this)">after</a></li>
+                                        <li><a id="search-date-before" onclick="selectOption(this)">before</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="search-wrapper">
+        <form id="search-form" class="search"  autocomplete="off" method="post" action="search" >
+            <input id="search-query" placeholder="Search.." type="text" title="type &quot;a&quot;" name="search" >
+            <button id="search-submit" type="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+    <nav id="user-settings" class="dws-menu">
+        <ul>
+            <li>
+                <a id="profile-menu">Log in</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+<div id="id01" class="modal">
+    <form class="modal-content animate" action="">
+        <div class="close-container">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="close">&times;</span>
+        </div>
+        <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" id="uname" required>
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" id="psw" required>
+            <button id="login-submit" type="submit">Login</button>
+        </div>
+    </form>
+</div>
+<div id="posts-holder" class="post-list-holder" style="display: none;">
+    <div id="add-post-container" class="post-add">
+        <input id="add-post-file" type="file"/>
+        <button id="add-post-file-button">
+            <i class="fa fa-paperclip"></i>
+        </button>
+        <input id="add-post-description" type="text" placeholder="What's new ?.."/>
+        <button id="add-post-submit" type="submit">
+            <i class="fa fa-arrow-circle-right fa-lg"></i>
+        </button>
+    </div>
+    <button id="load-more-button" class="load-more">Load more</button>
+</div>
+<footer>
+    <div><p>&lt;insert_portal_name&gt;</p></div>
+    <div><p>&lt;insert_author&gt;</p></div>
+</footer>
+<script src="UI/js/script.js"></script>
+</body>
+</html>
