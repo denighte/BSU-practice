@@ -14,6 +14,7 @@ import java.io.IOException;
 import static javax.servlet.http.HttpServletResponse.SC_BAD_REQUEST;
 import static javax.servlet.http.HttpServletResponse.SC_OK;
 
+@Deprecated
 @WebServlet(urlPatterns = {"/check"})
 public class JsonServlet extends HttpServlet {
     @Override

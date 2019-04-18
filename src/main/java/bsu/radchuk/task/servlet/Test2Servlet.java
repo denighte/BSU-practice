@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-
+@Deprecated
 @WebServlet(urlPatterns = {"/test2"})
 public class Test2Servlet extends HttpServlet {
     @Override

@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
+@Deprecated
 @Slf4j
 @WebFilter(urlPatterns = {"/*"})
 public class TestFilter implements Filter {
