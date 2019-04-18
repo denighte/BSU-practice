@@ -28,23 +28,26 @@ public class UserDao implements AutoCloseable {
     /**
      * find user by id query.
      */
-    private static final String FIND_USER_BY_ID
-            = "SELECT id, login, password_hash FROM users WHERE id = ?";
+    private static final String FIND_USER_BY_ID;
     /**
      * find user by login query.
      */
-    private static final String FIND_USER_BY_LOGIN
-            = "SELECT id, login, password_hash FROM users WHERE login = ?";
+    private static final String FIND_USER_BY_LOGIN;
     /**
      * insert user query.
      */
-    private static final String INSERT_USER
-            = "INSERT INTO users (login, password_hash) VALUES (?, ?);";
+    private static final String INSERT_USER;
     /**
      * update user query.
      */
-    private static final String UPDATE_USER
-            = "UPDATE users SET login = ?, password_hash = ? WHERE id= ?";
+    private static final String UPDATE_USER;
+    static {
+        Queries queries = Queries.getInstance();
+        FIND_USER_BY_ID = queries.getQuery("users:find_by_id");
+        FIND_USER_BY_LOGIN = queries.getQuery("users:find_by_login");
+        INSERT_USER = queries.getQuery("users:insert");
+        UPDATE_USER = queries.getQuery("users:update");
+    }
     /**
      * query executor objects.
      * @see bsu.radchuk.task.dao.framework.Executor

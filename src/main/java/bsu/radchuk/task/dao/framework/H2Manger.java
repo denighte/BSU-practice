@@ -5,6 +5,7 @@ import bsu.radchuk.task.dao.DaoException;
 import bsu.radchuk.task.dao.UserDao;
 import bsu.radchuk.task.model.User;
 import lombok.Cleanup;
+import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.h2.jdbcx.JdbcDataSource;
 import org.h2.tools.RunScript;
@@ -82,12 +83,7 @@ public final class H2Manger implements ConnectionManager {
         dataSource.setPassword(PASSWORD);
         connectionPool = FixedConnectionPool.create(dataSource,
                                       JDBC_CONNECTION_POOL_SIZE);
-        try {
-            initDatabase();
-        } catch (Exception exception) {
-            log.error("FATAL!!!!!!!");
-        }
-
+        initDatabase();
     }
 
     /**
@@ -105,15 +101,18 @@ public final class H2Manger implements ConnectionManager {
      * Runs database init script file.
      * @throws SQLException if script file can't be read.
      */
-    private void initDatabase() throws SQLException, UnsupportedEncodingException {
-        String path = this.getClass().getClassLoader().getResource("").getPath();
-        String fullPath = URLDecoder.decode(path, "UTF-8");
+    @SneakyThrows(UnsupportedEncodingException.class)
+    private void initDatabase() {
+        String encodedPath = this.getClass().getClassLoader().getResource("").getPath();
+        String fullPath = URLDecoder.decode(encodedPath, "UTF-8");
         try {
             RunScript.execute(getConnection(),
                               new FileReader(fullPath + SQL_INIT_SCRIPT));
         } catch (FileNotFoundException exception) {
-            log.error("Failed to read SQL script file:"
+            log.error("Fatal: failed to read SQL script file:"
                       + " File not found!", exception);
+        } catch (SQLException exception) {
+            log.error("Fatal: failed to execute SQL script.", exception);
         }
     }
 
