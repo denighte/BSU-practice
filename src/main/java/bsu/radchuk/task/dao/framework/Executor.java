@@ -152,7 +152,7 @@ public class Executor implements AutoCloseable {
     /**
      * init statement for given query or use cached.
      * @param query sql query
-     * @throws SQLException db operation error.
+     * @throws SQLException db operation info.
      */
     private void initStatement(final String query)  throws SQLException {
         if (statement == null) {

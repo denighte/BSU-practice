@@ -2,7 +2,7 @@ package bsu.radchuk.task.servlet;
 
 import bsu.radchuk.task.model.Message;
 import bsu.radchuk.task.model.User;
-import bsu.radchuk.task.service.LoginService;
+import bsu.radchuk.task.service.UserService;
 import bsu.radchuk.task.service.ServiceException;
 import bsu.radchuk.task.io.RestIO;
 
@@ -21,36 +21,24 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
         if (login == null || password == null) {
             response.setStatus(400);
-            io.write(Message.builder()
-                                .status(400)
-                                .data("Invalid parameters.")
-                                .build());
+            io.info(400, "Invalid parameters.");
             return;
         }
         User user = null;
-        LoginService loginService = new LoginService();
+        UserService loginService = new UserService();
         try {
             user = loginService.loginUser(login, password);
         } catch (ServiceException exception) {
-            io.write(Message.builder()
-                    .status(503)
-                    .data("Service is unavailable, please try again later.")
-                    .build());
+            io.info(503, "Service is unavailable.");
             return;
         }
         if (user == null) {
             response.setStatus(200);
-            io.write(Message.builder()
-                    .status(200)
-                    .data("Invalid login or password.")
-                    .build());
+            io.info(200, "Invalid login or password.");
             return;
         }
         request.getSession().setAttribute("user", user.getId());
         response.setStatus(200);
-        io.write(Message.builder()
-                            .status(200)
-                            .data("Successfully logged in.")
-                            .build());
+        io.info(200, "Successfully logged in.");
     }
 }

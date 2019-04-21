@@ -49,7 +49,7 @@ public class FixedConnectionPool implements DataSource,
                                             ConnectionEventListener {
 
     /**
-     * 'SQL Server does not exist or access is denied' error code.
+     * 'SQL Server does not exist or access is denied' info code.
      */
     private static final int DB_ACCESS_ERROR = 8001;
     /**
@@ -377,7 +377,7 @@ public class FixedConnectionPool implements DataSource,
     /**
      * INTERNAL
      * Notifies this <code>ConnectionEventListener</code> that
-     * a fatal error has occurred and the pooled connection can
+     * a fatal info has occurred and the pooled connection can
      * no longer be used.  The driver makes this notification just
      * before it throws the application the <code>SQLException</code>
      * contained in the given <code>ConnectionEvent</code> object.

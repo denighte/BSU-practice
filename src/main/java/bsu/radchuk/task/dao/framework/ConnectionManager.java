@@ -15,7 +15,7 @@ public interface ConnectionManager {
      * this {@code ConnectionManager} object represents.
      *
      * @return  a connection to the data source
-     * @exception SQLException if a database access error occurs
+     * @exception SQLException if a database access info occurs
      */
     Connection getConnection() throws SQLException;
 }

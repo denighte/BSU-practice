@@ -27,7 +27,7 @@ import java.sql.SQLException;
  * @author Dmitry Radchuk
  */
 @Slf4j
-public final class H2Manger implements ConnectionManager {
+public final class H2Manger implements ConnectionManager, AutoCloseable {
     /**
      * <code>FixedConnectionPool</code> object size.
      */
@@ -62,7 +62,7 @@ public final class H2Manger implements ConnectionManager {
      * Singleton instance getter.
      * @return <code>H2Manger</code> object instance.
      */
-    static H2Manger getInstance() {
+    public static H2Manger getInstance() {
         return INSTANCE;
     }
 
@@ -116,18 +116,8 @@ public final class H2Manger implements ConnectionManager {
         }
     }
 
-    /**
-     * Runs database script files.
-     * @param args console parameters.
-     */
-    public static void main(final String[] args) throws DaoException {
-//        try {
-            //getInstance().initDatabase();
-            @Cleanup UserDao executor = new UserDao();
-        System.out.println(executor.find("login"));
-//        } catch (SQLException exception) {
-//            log.error("Failed to init Database: SQL exception!", exception);
-//        }
-
+    @Override
+    public void close() {
+        connectionPool.dispose();
     }
 }

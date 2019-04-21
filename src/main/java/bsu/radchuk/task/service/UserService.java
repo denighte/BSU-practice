@@ -4,6 +4,7 @@ import bsu.radchuk.task.dao.DaoException;
 import bsu.radchuk.task.dao.UserDao;
 import bsu.radchuk.task.model.User;
 import lombok.NonNull;
+import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import lombok.var;
 
@@ -11,7 +12,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 @Slf4j
-public class LoginService {
+public class UserService {
 
     public User loginUser(@NonNull String login,
                           @NonNull String password)
@@ -47,21 +48,17 @@ public class LoginService {
      * @param password password to hash
      * @return password md5 hash
      */
+    @SneakyThrows(NoSuchAlgorithmException.class)
     private String hashPassword(String password) throws ServiceException {
-        try {
-            MessageDigest md = MessageDigest.getInstance("MD5");
-            md.update(password.getBytes());
-            var sb = new StringBuilder();
-            //Get the hash's bytes
-            //Bytes are in decimal format;
-            //Convert it to hexadecimal format
-            for (var b : md.digest()) {
-                sb.append(Integer.toString((b & 0xff) + 0x100, 16).substring(1));
-            }
-            return sb.toString();
-        } catch (NoSuchAlgorithmException e) {
-            log.error("Fatal: unable to find hash algorithm.", e);
-            throw new ServiceException("Fatal: unable to find hash algorithm.", e);
+        MessageDigest md = MessageDigest.getInstance("MD5");
+        md.update(password.getBytes());
+        var sb = new StringBuilder();
+        //Get the hash's bytes
+        //Bytes are in decimal format;
+        //Convert it to hexadecimal format
+        for (var b : md.digest()) {
+            sb.append(Integer.toString((b & 0xff) + 0x100, 16).substring(1));
         }
+        return sb.toString();
     }
 }

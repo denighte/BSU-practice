@@ -17,7 +17,7 @@
         <org.apache.logging.log4j>2.11.0</org.apache.logging.log4j>
         <org.projectlombok>1.18.4</org.projectlombok>
         <org.testng>6.14.3</org.testng>
-        <servlet-api>3.1.0</servlet-api>
+        <servlet-api>4.0.0</servlet-api>
         <jstl.version>1.2</jstl.version>
         <com.google.code.json>2.8.5</com.google.code.json>
         <com.h2database.h2.version>1.4.187</com.h2database.h2.version>

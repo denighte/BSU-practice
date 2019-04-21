@@ -1,7 +1,6 @@
 package bsu.radchuk.task.dao;
 
 import bsu.radchuk.task.dao.framework.Executor;
-import bsu.radchuk.task.dao.framework.Queries;
 import bsu.radchuk.task.model.User;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
@@ -28,28 +27,26 @@ public class UserDao implements AutoCloseable {
     /**
      * find user by id query.
      */
-    private static final String FIND_USER_BY_ID;
+    private static final String FIND_USER_BY_ID
+            = "SELECT id, login, password_hash FROM users WHERE id = ?;";
     /**
      * find user by login query.
      */
-    private static final String FIND_USER_BY_LOGIN;
+    private static final String FIND_USER_BY_LOGIN
+            = "SELECT id, login, password_hash FROM users WHERE login = ?;";
     /**
      * insert user query.
      */
-    private static final String INSERT_USER;
+    private static final String INSERT_USER
+            = "INSERT INTO users (login, password_hash) VALUES (?, ?);";
     /**
      * update user query.
      */
-    private static final String UPDATE_USER;
-    static {
-        Queries queries = Queries.getInstance();
-        FIND_USER_BY_ID = queries.getQuery("users:find_by_id");
-        FIND_USER_BY_LOGIN = queries.getQuery("users:find_by_login");
-        INSERT_USER = queries.getQuery("users:insert");
-        UPDATE_USER = queries.getQuery("users:update");
-    }
+    private static final String UPDATE_USER
+            = "UPDATE users SET login = ?, password_hash = ? WHERE id= ?;";
+
     /**
-     * query executor objects.
+     * query executor object.
      * @see bsu.radchuk.task.dao.framework.Executor
      */
     private Executor executor = new Executor();
@@ -58,7 +55,7 @@ public class UserDao implements AutoCloseable {
      * find user in the database by the given id.
      * @param id id of the user.
      * @return new <code>User</code> object if found, otherwise null.
-     * @throws DaoException if dao operation error occurred.
+     * @throws DaoException if dao operation info occurred.
      */
     public User find(final int id) throws DaoException {
         try {
@@ -80,7 +77,7 @@ public class UserDao implements AutoCloseable {
      * find user in the database by given login.
      * @param login login of the user.
      * @return new <code>User</code> object if found, otherwise null.
-     * @throws DaoException if dao operation error occurred.
+     * @throws DaoException if dao operation info occurred.
      */
     public User find(@NonNull final String login)
             throws DaoException {
@@ -102,7 +99,7 @@ public class UserDao implements AutoCloseable {
     /**
      * saves user in the database.
      * @param user <code>User</code> object.
-     * @throws DaoException if dao operation error occurred.
+     * @throws DaoException if dao operation info occurred.
      * @return id of the inserted user.
      */
     public int insert(@NonNull final User user) throws DaoException {
@@ -118,7 +115,7 @@ public class UserDao implements AutoCloseable {
     /**
      * updates user in the database.
      * @param user <code>User</code> object.
-     * @throws DaoException if dao operation error occurred.
+     * @throws DaoException if dao operation info occurred.
      * @return 1 - if the user was updated, 0 otherwise.
      */
     public int update(@NonNull final User user) throws DaoException {
@@ -134,7 +131,7 @@ public class UserDao implements AutoCloseable {
 
     /**
      * closes resources of the dao.
-     * @throws DaoException if dao operation error occurred.
+     * @throws DaoException if dao operation info occurred.
      */
     @Override
     public void close() throws DaoException {

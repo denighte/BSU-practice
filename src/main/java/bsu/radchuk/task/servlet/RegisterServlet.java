@@ -2,7 +2,7 @@ package bsu.radchuk.task.servlet;
 
 import bsu.radchuk.task.model.Message;
 import bsu.radchuk.task.model.User;
-import bsu.radchuk.task.service.LoginService;
+import bsu.radchuk.task.service.UserService;
 import bsu.radchuk.task.service.ServiceException;
 import bsu.radchuk.task.io.RestIO;
 
@@ -16,26 +16,28 @@ public class RegisterServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request,
                           HttpServletResponse response)
-            throws ServletException, IOException {
+            throws IOException {
         RestIO io = new RestIO(response);
-        User user = io.read(request.getParameter("User"), User.class);
-        if (user == null) {
-            response.setStatus(400);
-            io.write(Message.builder()
-                    .status(400)
-                    .data("Invalid parameters.")
-                    .build());
+        String strUser = request.getParameter("User");
+        if (strUser == null) {
+            io.info(400, "Invalid parameters");
             return;
         }
-        LoginService loginService = new LoginService();
+        User user = io.read(strUser, User.class);
+        if (user == null
+           || user.getPasswordHash() == null
+           || user.getLogin() == null)
+        {
+            io.info(400, "Invalid parameters.");
+            return;
+        }
+        UserService loginService = new UserService();
         try {
             loginService.registerUser(user);
         } catch (ServiceException exception) {
-            io.write(Message.builder()
-                    .status(503)
-                    .data("Service is unavailable, please try again later.")
-                    .build());
+            io.info(503, "Service is unavailable.");
         }
+        io.info(200, "Successfully registered.");
         request.getSession().setAttribute("user", user.getId());
     }
 }
