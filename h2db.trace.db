@@ -1,0 +1,18 @@
+04-19 00:31:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Hexadecimal string contains non-hex character: "passwordHash"; SQL statement:
+INSERT INTO users (login, password_hash) VALUES (?, ?) -- (?1, ?2) [90004-187]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.util.StringUtils.convertHexToBytes(StringUtils.java:983)
+	at org.h2.value.Value.convertTo(Value.java:864)
+	at org.h2.table.Column.convert(Column.java:148)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:143)
+	at org.h2.command.dml.Insert.update(Insert.java:114)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:78)
+	at org.h2.command.Command.executeUpdate(Command.java:254)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:157)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:143)
+	at bsu.radchuk.task.dao.framework.Executor.execSave(Executor.java:105)
+	at bsu.radchuk.task.dao.UserDao.insert(UserDao.java:107)
+	at bsu.radchuk.task.dao.framework.H2Manger.main(H2Manger.java:123)
