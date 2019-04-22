@@ -1,6 +1,7 @@
 package bsu.radchuk.task.model;
 
 import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 import lombok.Builder;
 import lombok.Data;
 
@@ -10,5 +11,6 @@ public class User {
     @Expose(deserialize = false)
     int id;
     String login;
+    @SerializedName(value="password")
     String passwordHash;
 }

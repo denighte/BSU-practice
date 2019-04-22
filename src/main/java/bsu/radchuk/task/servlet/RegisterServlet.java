@@ -18,7 +18,7 @@ public class RegisterServlet extends HttpServlet {
                           HttpServletResponse response)
             throws IOException {
         RestIO io = new RestIO(response);
-        String strUser = request.getParameter("User");
+        String strUser = request.getParameter("user");
         if (strUser == null) {
             io.info(400, "Invalid parameters");
             return;

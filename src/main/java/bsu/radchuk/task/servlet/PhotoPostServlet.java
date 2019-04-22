@@ -32,7 +32,6 @@ public class PhotoPostServlet extends HttpServlet {
         String requestedId = request.getParameter("id");
         int id = 0;
         if (requestedId == null) {
-            response.setStatus(400);
             io.info(400, "Invalid parameters");
             return;
         }
@@ -57,9 +56,9 @@ public class PhotoPostServlet extends HttpServlet {
             return;
         }
 
-        request.newPushBuilder()
-                .path(post.getSrc())
-                .push();
+        //if http/2.0 is enabled photo of the post could be loaded in that way.
+        //request.newPushBuilder().path(post.getSrc()).push();
+
         io.write(post);
 
     }
@@ -95,9 +94,10 @@ public class PhotoPostServlet extends HttpServlet {
         String filename = file.getSubmittedFileName();
         String rootUrl = getServletContext().getResource("/").getPath();
         String rootPath = URLDecoder.decode(rootUrl, "UTF-8");
-        if (rootPath.startsWith("/")) {
-            rootPath = rootPath.substring(1);
-        }
+        //TODO: NTFS FILESYSTEM fix
+//        if (rootPath.startsWith("/")) {
+//            rootPath = rootPath.substring(1);
+//        }
         //TODO: add unique filename creation.
         String relativeFilePath = "img/" + filename;
         String absoluteFilePath = rootPath + relativeFilePath;
@@ -142,9 +142,10 @@ public class PhotoPostServlet extends HttpServlet {
             PhotoPost post = dao.find(id);
             String rootUrl = getServletContext().getResource("/").getPath();
             String rootPath = URLDecoder.decode(rootUrl, "UTF-8");
-            if (rootPath.startsWith("/")) {
-                rootPath = rootPath.substring(1);
-            }
+            //TODO: NTFS FILESYSTEM fix
+//          if (rootPath.startsWith("/")) {
+//              rootPath = rootPath.substring(1);
+//          }
             try {
                 Files.delete(Paths.get(rootPath + post.getSrc()));
             } catch (IOException | NullPointerException exception) {
