@@ -1,0 +1,1 @@
+SELECT u.name, STRING_AGG(u.name, ',') FROM USER u GROUP BY u.name;
