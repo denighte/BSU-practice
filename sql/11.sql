@@ -1,0 +1,1 @@
+SELECT DATEDIFF(CURDATE(), creation_date) FROM PHOTO_POST ORDER BY creation_date ASC LIMIT 1; 
