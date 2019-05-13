@@ -1,1 +1,0 @@
-SELECT * FROM PHOTO_POST ORDER BY creation_date ASC;

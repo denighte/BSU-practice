@@ -1,1 +1,0 @@
-SELECT u.name FROM USER u INNER JOIN PHOTO_POST p ON u.id = p.user_id WHERE p.creation_date = CURDATE();

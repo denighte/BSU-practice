@@ -1,1 +1,0 @@
-SELECT u.name, COUNT(p.id) FROM USER u LEFT JOIN PHOTO_POST p ON p.user_id = u.id AND p.creation_date = DATE('2019-05-9') GROUP BY u.name;
