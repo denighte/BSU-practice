@@ -6,9 +6,9 @@
 
     <groupId>by.radchuk.photoportal</groupId>
     <artifactId>photoportal</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.0.1a</version>
     <packaging>war</packaging>
-    <name>photo-portal</name>
+    <name>main-task</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -17,7 +17,7 @@
         <org.apache.logging.log4j>2.11.0</org.apache.logging.log4j>
         <org.projectlombok>1.18.4</org.projectlombok>
         <org.testng>6.14.3</org.testng>
-        <servlet-api>4.0.0</servlet-api>
+        <servlet-api>3.1.0</servlet-api>
         <jstl.version>1.2</jstl.version>
         <com.google.code.json>2.8.5</com.google.code.json>
         <com.h2database.h2.version>1.4.187</com.h2database.h2.version>
@@ -33,6 +33,7 @@
             <version>${servlet-api}</version>
             <scope>provided</scope>
         </dependency>
+
         <!-- https://mvnrepository.com/artifact/jstl/jstl -->
         <dependency>
             <groupId>jstl</groupId>
@@ -58,6 +59,13 @@
             <version>${org.projectlombok}</version>
             <scope>provided</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${org.testng}</version>
+            <scope>test</scope>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
         <dependency>
             <groupId>com.google.code.gson</groupId>
@@ -70,6 +78,16 @@
             <artifactId>h2</artifactId>
             <version>${com.h2database.h2.version}</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.tomcat/catalina -->
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>catalina</artifactId>
+            <version>6.0.26</version>
+            <scope>provided</scope>
+        </dependency>
+
+
     </dependencies>
 
     <build>
@@ -89,6 +107,11 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>2.12.4</version>
+                    <configuration>
+                        <suiteXmlFiles>
+                            <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
+                        </suiteXmlFiles>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <artifactId>maven-clean-plugin</artifactId>
